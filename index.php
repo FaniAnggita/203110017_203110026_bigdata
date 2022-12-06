@@ -88,38 +88,46 @@ require_once('api-mongodb.php')
             <table id="tabel-data" class="table table-striped table-bordered table-hover table-responsive" cellspacing="0">
                 <thead class="table-dark">
                     <tr>
-                        <th>talk_id</th>
-                        <th>title</th>
-                        <th>speaker</th>
-                        <th>published_date</th>
-                        <th>event</th>
-                        <th>duration</th>
-                        <th>views</th>
+                        <th>id</th>
+                        <th>app</th>
+                        <th>Content Rating </th>
+                        <th>Rating</th>
+                        <th>Size</th>
+                        <th>Installs</th>
+                        <th>Price</th>
+                        <th>Genres </th>
+
                     </tr>
                 </thead>
 
                 <tbody>
-                    <?php foreach ($cursor as $d) { ?>
+                    <?php foreach ($cursor as $d) {
+                        $i++; ?>
                         <tr>
-                            <td><?php echo $d["talk_id"] ?></td>
-                            <td><?php echo $d["title"] ?></td>
-                            <td><?php echo $d["speaker"] ?></td>
-                            <td><?php echo $d["published_date"]; ?></td>
-                            <td><?php echo $d["event"] ?></td>
-                            <td><?php echo $d["duration"] ?></td>
-                            <td><?php echo $d["views"] ?></td>
+                            <td><?php echo $i; ?></td>
+                            <td><?php echo $d["App"] ?></td>
+                            <td><?php echo $d["Content Rating"] ?></td>
+                            <td><?php echo $d["Rating"] ?></td>
+                            <td><?php echo $d["Size"]; ?></td>
+                            <td><?php echo $d["Installs"] ?></td>
+                            <td><?php echo $d["Price"] ?></td>
+                            <td><?php echo $d["Genres"] ?></td>
+
                         </tr>
                     <?php } ?>
                 </tbody>
                 <tfoot class="table-secondary">
                     <tr>
-                        <th>talk_id</th>
-                        <th>title</th>
-                        <th>speaker</th>
-                        <th>published_date</th>
-                        <th>event</th>
-                        <th>duration</th>
-                        <th>views</th>
+                        <th>id</th>
+                        <th>app</th>
+                        <th>Content Rating </th>
+                        <th>Rating</th>
+
+                        <th>Size</th>
+                        <th>Installs</th>
+                        <th>Price</th>
+                        <th>Genres </th>
+
                     </tr>
                 </tfoot>
             </table>
@@ -138,7 +146,6 @@ require_once('api-mongodb.php')
                 $(this).html('<input type="text" placeholder="Search ' + title + '" width:"10px"/>');
 
             });
-
 
 
             $('#tabel-data').DataTable({
@@ -178,10 +185,6 @@ require_once('api-mongodb.php')
                 // Toggle the visibility
                 column.visible(!column.visible());
             });
-
-
-
-
 
         });
     </script>

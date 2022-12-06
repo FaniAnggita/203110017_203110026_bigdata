@@ -11,8 +11,8 @@ server = "127.0.0.1:9000"
 accessKey = "minioadmin"
 secretKey = "minioadmin"
 myBucket = "bigdata"
-dataset = "dataset/20221013_ted_talks.csv"
-myObject = "ted"
+dataset = "dataset/googleplaystore.csv"
+myObject = "googleplaystore"
 
 
 print("______________________________________\n")
@@ -68,9 +68,9 @@ print("______________________________________\n")
 #buat koneksi ke server MongoDB
 clientMongo = pymongo.MongoClient("mongodb://localhost:27017")
 #buat database baru atau buka jika sudah ada
-db = clientMongo["dbTED"]
+db = clientMongo["dbBigData"]
 #buat collection atau buka jika sudah ada
-col = db["colTED"]
+col = db["colBigData"]
 
 try: db.command("serverStatus")
 except Exception as e: print(e)

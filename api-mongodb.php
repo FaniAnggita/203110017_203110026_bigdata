@@ -5,8 +5,8 @@ $server = "localhost:27017";
 $m = new MongoDB\Client('mongodb://' . $server);
 
 // select a database
-$namaDB = "dbTED";
-$namaCol = "colTED";
+$namaDB = "dbBigData";
+$namaCol = "colBigData";
 
 $db = $m->$namaDB;
 //echo "Database mydb selected";
