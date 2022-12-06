@@ -12,7 +12,7 @@ accessKey = "minioadmin"
 secretKey = "minioadmin"
 myBucket = "bigdata"
 dataset = "dataset/googleplaystore.csv"
-myObject = "googleplaystore"
+myObject = "datasetgoogleplaystore"
 
 
 print("______________________________________\n")
@@ -46,12 +46,6 @@ print(
     ),
 )
 
-# # Menampilkan list objects
-# objects = client.list_objects(myBucket, recursive=True)
-# for obj in objects:
-#         print(obj.bucket_name, obj.object_name, obj.last_modified, \
-#             obj.etag, obj.size, obj.content_type)
-
 print("______________________________________\n")
 # TODO 5: Menampilkan object dari minio server dalam pandas df
 try:
@@ -68,9 +62,9 @@ print("______________________________________\n")
 #buat koneksi ke server MongoDB
 clientMongo = pymongo.MongoClient("mongodb://localhost:27017")
 #buat database baru atau buka jika sudah ada
-db = clientMongo["dbBigData"]
+db = clientMongo["dbGooglePlayStore"]
 #buat collection atau buka jika sudah ada
-col = db["colBigData"]
+col = db["colGooglePlayStore"]
 
 try: db.command("serverStatus")
 except Exception as e: print(e)

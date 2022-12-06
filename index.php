@@ -18,7 +18,13 @@ require_once('api-mongodb.php')
 </head>
 
 <body>
+    <div class="row">
+        <div class="alert alert-primary text-center" role="alert">
+            Anggota Kelompok: <strong> 203110017-Annisa Kinanti & 203110026-Fani Anggita </strong> | Data Source: <a href="#" class="alert-link">https://www.kaggle.com/datasets/lava18/google-play-store-apps</a>
+        </div>
+    </div>
     <div class="container-fluid p-4">
+
         <div class="row">
             <div class="col-xl-3 col-sm-6 col-12 mb-4">
                 <div class="card">
@@ -90,6 +96,7 @@ require_once('api-mongodb.php')
                     <tr>
                         <th>id</th>
                         <th>app</th>
+                        <th>Category</th>
                         <th>Content Rating </th>
                         <th>Rating</th>
                         <th>Size</th>
@@ -106,6 +113,7 @@ require_once('api-mongodb.php')
                         <tr>
                             <td><?php echo $i; ?></td>
                             <td><?php echo $d["App"] ?></td>
+                            <td><?php echo $d["Category"] ?></td>
                             <td><?php echo $d["Content Rating"] ?></td>
                             <td><?php echo $d["Rating"] ?></td>
                             <td><?php echo $d["Size"]; ?></td>
@@ -120,9 +128,9 @@ require_once('api-mongodb.php')
                     <tr>
                         <th>id</th>
                         <th>app</th>
+                        <th>Category</th>
                         <th>Content Rating </th>
                         <th>Rating</th>
-
                         <th>Size</th>
                         <th>Installs</th>
                         <th>Price</th>
@@ -162,10 +170,7 @@ require_once('api-mongodb.php')
                                 }
                             });
                         });
-                    // $('.dataTables_filter input[type="search"]').css({
-                    //     'width': '350px',
-                    //     'display': 'inline-block'
-                    // });
+
                 },
 
                 scrollY: '290px',

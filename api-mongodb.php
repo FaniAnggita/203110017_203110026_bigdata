@@ -1,19 +1,21 @@
 <?php
 require 'vendor/autoload.php';
 
+// Menghubungkan ke server MongoDB
 $server = "localhost:27017";
 $m = new MongoDB\Client('mongodb://' . $server);
 
-// select a database
-$namaDB = "dbBigData";
-$namaCol = "colBigData";
+// Variabel untuk nama database dan collection
+$namaDB = "dbGooglePlayStore";
+$namaCol = "colGooglePlayStore";
 
+// Memilih database
 $db = $m->$namaDB;
-//echo "Database mydb selected";
+
+// Memilih collection
 $collection = $db->$namaCol;
-//echo "Collection selected succsessfully";
-// $query = [];
-// $cursor = $collection->find($query, ['limit' => 1000]);
+
+// query ke collection
 $cursor = $collection->find();
 $i = 0;
 
